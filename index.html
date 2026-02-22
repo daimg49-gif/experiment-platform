@@ -66,9 +66,9 @@
 <p class="p6"><span class="s7"></span><br></p>
 <p class="p7"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- 主程式碼 (Type 設定為 text/babel 與 module 以支援 Firebase 模組引入) --&gt;</span></p>
 <p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"text/babel"</span><span class="s5"> </span><span class="s2">data-type</span><span class="s3">=</span><span class="s1">"module"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// --- 引入 Firebase 雲端模組 ---</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// --- 引入 Firebase 雲端模組 --- (統一使用官方 CDN 路徑)</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>import { getAuth, signInWithCustomToken, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";</span></p>
 <p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// 從全域變數中取得 React 與 Recharts 工具</span></p>
@@ -79,37 +79,25 @@
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>let app, auth, db;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const appId = "my-experiment-platform"; // 專案固定 ID</span></p>
 <p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">   </span>// Import the functions you need from the SDKs you need</span></p>
-<p class="p5"><span class="s1">import { initializeApp } from "firebase/app";</span></p>
-<p class="p5"><span class="s1">import { getAnalytics } from "firebase/analytics";</span></p>
-<p class="p5"><span class="s1">// TODO: Add SDKs for Firebase products that you want to use</span></p>
-<p class="p5"><span class="s1">// https://firebase.google.com/docs/web/setup#available-libraries</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1">// Your web app's Firebase configuration</span></p>
-<p class="p5"><span class="s1">// For Firebase JS SDK v7.20.0 and later, measurementId is optional</span></p>
-<p class="p5"><span class="s1">const firebaseConfig = {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">  </span>apiKey: "AIzaSyAdO41X5cNZmeC7SUGEt17hRXN3rgauUB8",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">  </span>authDomain: "experiment-platform-489f0.firebaseapp.com",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">  </span>projectId: "experiment-platform-489f0",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">  </span>storageBucket: "experiment-platform-489f0.firebasestorage.app",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">  </span>messagingSenderId: "291865361226",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">  </span>appId: "1:291865361226:web:8ae57d4c5efc422e001fb3",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">  </span>measurementId: "G-Z6PGSL59Y0"</span></p>
-<p class="p5"><span class="s1">};</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1">// Initialize Firebase</span></p>
-<p class="p5"><span class="s1">const app = initializeApp(firebaseConfig);</span></p>
-<p class="p5"><span class="s1">const analytics = getAnalytics(app);</span></p>
-<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// 使用你提供的 Firebase 設定</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const firebaseConfig = {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>apiKey: "AIzaSyAdO41X5cNZmeC7SUGEt17hRXN3rgauUB8",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>authDomain: "experiment-platform-489f0.firebaseapp.com",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>projectId: "experiment-platform-489f0",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>storageBucket: "experiment-platform-489f0.firebasestorage.app",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>messagingSenderId: "291865361226",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>appId: "1:291865361226:web:8ae57d4c5efc422e001fb3",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>measurementId: "G-Z6PGSL59Y0"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
 <p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>try {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>// 如果設定檔裡還有「你的_」中文字，就不啟動 Firebase 以免當機</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>if (!firebaseConfig.apiKey.includes("你的_")) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>// 只有在填入正確金鑰時才啟動雲端功能</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>if (firebaseConfig.apiKey &amp;&amp; !firebaseConfig.apiKey.includes("你的_")) {</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>app = initializeApp(firebaseConfig);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>auth = getAuth(app);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>db = getFirestore(app);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>} else {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>console.warn("⚠️ Firebase 尚未設定，平台將以「離線模式」運行，資料僅保存在本次網頁中。");</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>console.warn("⚠️ Firebase 尚未設定，平台將以「離線模式」運行。");</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>} catch (err) {</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>console.error("Firebase 初始化失敗:", err);</span></p>
@@ -148,7 +136,7 @@
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleModalSubmit = (result) =&gt; { if (modal &amp;&amp; modal.onResolve) modal.onResolve(result); setModal(null); };</span></p>
 <p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>useEffect(() =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!auth) return; // 離線模式</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!auth) return;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const initAuth = async () =&gt; {</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>try { await signInAnonymously(auth); }<span class="Apple-converted-space"> </span></span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>catch (err) { console.error("驗證失敗:", err); }</span></p>
@@ -159,7 +147,7 @@
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}, []);</span></p>
 <p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>useEffect(() =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!user || !db) return; // 離線模式</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!user || !db) return;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>setIsCloudSyncing(true);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'platformData', 'main');</span></p>
 <p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
@@ -253,7 +241,7 @@
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
 <p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// ==========================================</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// 首頁/登入視圖</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// 子元件 (Login, Teacher, Student, Table, Chart)</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// ==========================================</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>function LoginView({ groups, onEnter, onTeacherLogin, appData, saveData, showModal }) {</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [selectedGroup, setSelectedGroup] = useState(groups[0] || '');</span></p>
@@ -264,21 +252,6 @@
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>e.preventDefault();</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (pwd === TEACHER_PWD) { setPwdModal(false); setPwd(''); onTeacherLogin(); }<span class="Apple-converted-space"> </span></span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>else { await showModal({ type: 'alert', message: '密碼錯誤！' }); }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleImportJSON = (e) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const file = e.target.files[0]; if (!file) return;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const reader = new FileReader();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>reader.onload = async (event) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>try {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const json = JSON.parse(event.target.result);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>if (json.groups &amp;&amp; typeof json.data === 'object') {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>saveData(json);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>await showModal({ type: 'alert', message: '成功匯入備份檔！' });</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>} else { await showModal({ type: 'alert', message: '檔案格式不正確' }); }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>} catch (err) { await showModal({ type: 'alert', message: '讀取檔案失敗' }); }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>reader.readAsText(file);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
 <p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>return (</span></p>
@@ -296,10 +269,6 @@
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;hr className="my-8 border-gray-200" /&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="flex justify-between gap-4"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;label className="flex-1 cursor-pointer bg-gray-100 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-200 transition flex items-center justify-center gap-2 text-sm font-bold"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;i className="ph ph-upload-simple text-lg"&gt;&lt;/i&gt; 匯入 JSON</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input type="file" accept=".json" className="hidden" onChange={handleImportJSON} /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/label&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;button onClick={() =&gt; setPwdModal(true)} className="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-200 transition flex items-center justify-center gap-2 text-sm font-bold"&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;i className="ph ph-gear text-lg"&gt;&lt;/i&gt; 教師後台</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/button&gt;</span></p>
@@ -323,12 +292,8 @@
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// ==========================================</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// 教師後台視圖</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// ==========================================</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>function TeacherView({ appData, saveData, showModal }) {</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [newGroup, setNewGroup] = useState('');</span></p>
-<p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleAddGroup = async () =&gt; {</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const trimmed = newGroup.trim();</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!trimmed) return;</span></p>
@@ -336,44 +301,17 @@
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>saveData({ ...appData, groups: [...appData.groups, trimmed] });</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>setNewGroup('');</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
-<p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleRemoveGroup = async (group) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const confirmed = await showModal({ type: 'confirm', message: `確定要刪除「${group}」嗎？所有相關數據將被移除！` });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const confirmed = await showModal({ type: 'confirm', message: `確定要刪除「${group}」嗎？` });</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (confirmed) {</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const newData = { ...appData, groups: appData.groups.filter(g =&gt; g !== group) };</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>delete newData.data[group];</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>saveData(newData);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleExportAllCSV = () =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>let csv = "\uFEFF組別,實驗名稱,列名(變數),欄名(測試項目),數值,質性描述\n";</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>appData.groups.forEach(group =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const exps = appData.data[group] || [];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>exps.forEach(exp =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>exp.rows.forEach(row =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>exp.columns.forEach(col =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>const val = row.values[col] || 0;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>const desc = (row.description || '').replace(/"/g, '""');<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>csv += `"${group}","${exp.name}","${row.name}","${col}",${val},"${desc}"\n`;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const url = URL.createObjectURL(blob);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const link = document.createElement("a"); link.href = url; link.download = `所有實驗數據_${new Date().toISOString().slice(0,10)}.csv`;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>link.click();<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
-<p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>return (</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div className="bg-white p-6 rounded-xl shadow border border-gray-100"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex justify-between items-center mb-6"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2 className="text-2xl font-bold flex items-center gap-2"&gt;&lt;i className="ph ph-gear text-gray-500"&gt;&lt;/i&gt; 教師管理後台&lt;/h2&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button onClick={handleExportAllCSV} className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition flex items-center gap-2 font-bold"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;i className="ph ph-download-simple text-lg"&gt;&lt;/i&gt; 下載全部數據 (CSV)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h2 className="text-2xl font-bold flex items-center gap-2 mb-6"&gt;&lt;i className="ph ph-gear text-gray-500"&gt;&lt;/i&gt; 教師管理後台&lt;/h2&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="mb-8"&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h3 className="text-lg font-semibold mb-3 border-b pb-2"&gt;組別管理&lt;/h3&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="flex gap-2 mb-4"&gt;</span></p>
@@ -393,204 +331,98 @@
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// ==========================================</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// 學生工作區</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// ==========================================</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>function StudentWorkspace({ group, appData, saveData, showModal, isCloudSyncing, isOnline }) {</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const groupExps = appData.data[group] || [];</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [activeTabId, setActiveTabId] = useState(groupExps[0]?.id || null);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [isExporting, setIsExporting] = useState(false);</span></p>
-<p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>useEffect(() =&gt; { if (groupExps.length &gt; 0 &amp;&amp; !activeTabId) setActiveTabId(groupExps[0].id); }, [groupExps, activeTabId]);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const activeExp = groupExps.find(e =&gt; e.id === activeTabId) || groupExps[0];</span></p>
-<p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const updateCurrentExperiment = (updatedExp) =&gt; {</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const newData = { ...appData }; newData.data[group] = groupExps.map(e =&gt; e.id === updatedExp.id ? updatedExp : e); saveData(newData);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleExportJSON = () =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const blob = new Blob([JSON.stringify(appData, null, 2)], { type: 'application/json' });</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const url = URL.createObjectURL(blob);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const link = document.createElement('a'); link.href = url; link.download = `實驗平台備份_${new Date().toISOString().slice(0,10)}.json`; link.click();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
-<p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleExportImage = async () =&gt; {</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const el = document.getElementById('export-area'); if (!el) return;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!window.html2canvas) { await showModal({ type: 'alert', message: '正在載入模組，請稍後。' }); return; }</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>try {</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>setIsExporting(true); await new Promise(r =&gt; setTimeout(r, 400));<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const scrollables = el.querySelectorAll('.overflow-x-auto'); const origStyles = [];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>scrollables.forEach(node =&gt; { origStyles.push(node.style.overflowX); node.style.overflowX = 'visible'; });</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const origWidth = el.style.width; const origMaxWidth = el.style.maxWidth;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const targetWidth = Math.max(el.scrollWidth, el.offsetWidth, 1000);<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>el.style.width = `${targetWidth}px`; el.style.maxWidth = 'none';</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>await new Promise(r =&gt; setTimeout(r, 300));<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const canvas = await window.html2canvas(el, { backgroundColor: '#ffffff', scale: 2, useCORS: true, width: targetWidth, height: el.scrollHeight });</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>el.style.width = origWidth; el.style.maxWidth = origMaxWidth;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>scrollables.forEach((node, i) =&gt; node.style.overflowX = origStyles[i]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const canvas = await window.html2canvas(el, { backgroundColor: '#ffffff', scale: 2, useCORS: true });</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>setIsExporting(false);</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>await showModal({ type: 'image', imageUrl: canvas.toDataURL('image/jpeg', 1.0), message: '👉 請在此圖片上點擊滑鼠右鍵，選擇「另存圖片」即可下載。' });</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>} catch (err) { setIsExporting(false); await showModal({ type: 'alert', message: '匯出圖片失敗' }); }</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>await showModal({ type: 'image', imageUrl: canvas.toDataURL('image/jpeg', 1.0), message: '👉 請在此圖片上點擊滑鼠右鍵，選擇「另存圖片」下載。' });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>} catch (err) { setIsExporting(false); await showModal({ type: 'alert', message: '匯出失敗' }); }</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
-<p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>if (!activeExp) return &lt;div&gt;載入中...&lt;/div&gt;;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>return (</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div className="space-y-4"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>{isExporting &amp;&amp; &lt;style&gt;{`#export-area input[type=number]::-webkit-inner-spin-button, #export-area input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; } #export-area input[type=number] { -moz-appearance: textfield; pointer-events: none; } #export-area input[type=text], #export-area textarea { pointer-events: none; }`}&lt;/style&gt;}</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-4 rounded-lg shadow-sm border border-gray-100"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex justify-between items-center bg-white p-4 rounded-lg shadow-sm border border-gray-100"&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="flex items-center gap-3"&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span className="text-sm text-gray-700 font-bold bg-gray-100 px-3 py-1.5 rounded-lg"&gt;組別：{group}&lt;/span&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>{isOnline ? (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span className={`text-xs flex items-center gap-1 px-2 py-1.5 rounded-lg border font-bold transition-colors ${isCloudSyncing ? 'text-blue-600 bg-blue-50 border-blue-200' : 'text-green-600 bg-green-50 border-green-200'}`}&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;i className="ph ph-cloud text-base"&gt;&lt;/i&gt; {isCloudSyncing ? '雲端同步中...' : '已自動儲存至雲端'}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/span&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>) : (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span className="text-xs flex items-center gap-1 px-2 py-1.5 rounded-lg border font-bold text-orange-600 bg-orange-50 border-orange-200"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;i className="ph ph-warning-circle text-base"&gt;&lt;/i&gt; 離線模式 (請自行匯出備份)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/span&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span className={`text-xs flex items-center gap-1 px-2 py-1.5 rounded-lg border font-bold ${isCloudSyncing ? 'text-blue-600 bg-blue-50 border-blue-200' : 'text-green-600 bg-green-50 border-green-200'}`}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;i className="ph ph-cloud"&gt;&lt;/i&gt; {isCloudSyncing ? '雲端同步中...' : '已儲存至雲端'}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/span&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="flex flex-wrap gap-2"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;button type="button" onClick={handleExportJSON} className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold py-2 px-3 rounded-lg flex items-center gap-1 text-sm"&gt;&lt;i className="ph ph-download-simple text-base"&gt;&lt;/i&gt; 匯出 JSON&lt;/button&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;button type="button" onClick={handleExportImage} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-lg flex items-center gap-1 text-sm"&gt;&lt;i className="ph ph-image text-base"&gt;&lt;/i&gt; 預覽/下載截圖&lt;/button&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button onClick={handleExportImage} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-lg flex items-center gap-1 text-sm"&gt;&lt;i className="ph ph-image"&gt;&lt;/i&gt; 下載截圖&lt;/button&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex overflow-x-auto hide-scrollbar gap-2 border-b pb-2"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex overflow-x-auto gap-2 border-b pb-2"&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{groupExps.map(exp =&gt; (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div key={exp.id} className={`flex items-center gap-2 px-4 py-2 rounded-t-lg cursor-pointer whitespace-nowrap border-t border-l border-r transition-colors ${activeTabId === exp.id ? 'bg-white font-bold border-gray-200 border-b-white text-blue-600 -mb-[9px]' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`} onClick={() =&gt; setActiveTabId(exp.id)}&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{exp.name}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{activeTabId === exp.id &amp;&amp; &lt;i className="ph ph-trash text-gray-400 hover:text-red-500 ml-1" onClick={(e) =&gt; { e.stopPropagation(); /* 刪除邏輯 */ }}&gt;&lt;/i&gt;}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div key={exp.id} className={`px-4 py-2 rounded-t-lg cursor-pointer border-t border-l border-r ${activeTabId === exp.id ? 'bg-white font-bold text-blue-600 -mb-[9px]' : 'bg-gray-100'}`} onClick={() =&gt; setActiveTabId(exp.id)}&gt;{exp.name}&lt;/div&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>))}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button onClick={() =&gt; { const n = createDefaultExperiment(); saveData({...appData, data:{...appData.data, [group]:[...groupExps, n]}}); setActiveTabId(n.id); }} className="px-3 py-2 text-blue-600 hover:bg-blue-50 rounded-t-lg flex items-center gap-1 border border-transparent font-bold"&gt;&lt;i className="ph ph-plus"&gt;&lt;/i&gt; 新增實驗&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button onClick={() =&gt; { const n = createDefaultExperiment(); saveData({...appData, data:{...appData.data, [group]:[...groupExps, n]}}); setActiveTabId(n.id); }} className="px-3 py-2 text-blue-600 font-bold"&gt;+ 新增&lt;/button&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div id="export-area" className="bg-white p-6 rounded-b-xl rounded-tr-xl shadow-sm border border-gray-200"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="mb-6 flex flex-col gap-4"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="flex items-center gap-3"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label className="font-bold text-gray-700 whitespace-nowrap text-lg"&gt;實驗名稱：&lt;/label&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input type="text" className={`flex-1 max-w-md p-2 text-lg border-b-2 outline-none font-bold transition-colors ${isExporting ? 'border-transparent bg-transparent text-gray-900' : 'border-gray-200 focus:border-blue-500 bg-transparent'}`} value={activeExp.name} onChange={(e) =&gt; updateCurrentExperiment({ ...activeExp, name: e.target.value })} placeholder="請輸入實驗名稱..." /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="flex items-center gap-3"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label className="font-bold text-gray-700 whitespace-nowrap text-md"&gt;紀錄方式：&lt;/label&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input type="text" className={`flex-1 max-w-md p-2 text-md border-b outline-none transition-colors ${isExporting ? 'border-transparent bg-transparent text-gray-800' : 'border-gray-200 focus:border-blue-500 bg-transparent'}`} value={activeExp.recordMethod || ''} onChange={(e) =&gt; updateCurrentExperiment({ ...activeExp, recordMethod: e.target.value })} placeholder="請輸入實驗紀錄方式..." /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div id="export-area" className="bg-white p-6 rounded-b-xl shadow-sm border border-gray-200"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="mb-6 space-y-4"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="flex items-center gap-3"&gt;&lt;label className="font-bold"&gt;實驗名稱：&lt;/label&gt;&lt;input type="text" className="flex-1 p-2 border-b-2 outline-none font-bold focus:border-blue-500" value={activeExp.name} onChange={(e) =&gt; updateCurrentExperiment({ ...activeExp, name: e.target.value })} /&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="flex items-center gap-3"&gt;&lt;label className="font-bold"&gt;紀錄方式：&lt;/label&gt;&lt;input type="text" className="flex-1 p-2 border-b outline-none focus:border-blue-500" value={activeExp.recordMethod || ''} onChange={(e) =&gt; updateCurrentExperiment({ ...activeExp, recordMethod: e.target.value })} /&gt;&lt;/div&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className={`grid gap-8 ${isExporting &amp;&amp; activeExp.columns.length &gt; 5 ? 'grid-cols-1' : 'grid-cols-1 lg:grid-cols-2'}`}&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="overflow-x-auto bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between"&gt;&lt;DataTable experiment={activeExp} updateExperiment={updateCurrentExperiment} showModal={showModal} isExporting={isExporting} /&gt;&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col"&gt;&lt;DataChart experiment={activeExp} isExporting={isExporting} /&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="grid grid-cols-1 lg:grid-cols-2 gap-8"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;DataTable experiment={activeExp} updateExperiment={updateCurrentExperiment} isExporting={isExporting} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;DataChart experiment={activeExp} isExporting={isExporting} /&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// ==========================================</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// 表格元件</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// ==========================================</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>function DataTable({ experiment, updateExperiment, showModal, isExporting }) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>function DataTable({ experiment, updateExperiment, isExporting }) {</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const { columns, rows } = experiment;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>// 輔助函式縮減長度，與原邏輯相同</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const update = (newExp) =&gt; updateExperiment(newExp);</span></p>
-<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const update = (newRows) =&gt; updateExperiment({...experiment, rows: newRows});</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>return (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div className="w-full flex flex-col h-full"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex justify-between items-center mb-3"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h3 className="font-bold text-gray-700 flex items-center gap-2"&gt;&lt;i className="ph ph-pencil-simple text-lg"&gt;&lt;/i&gt; 實驗數據區&lt;/h3&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{!isExporting &amp;&amp; (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="flex gap-2"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onClick={() =&gt; update({...experiment, rows: [...rows, {id: `r-${Date.now()}`, name: `新實驗組`, description: '', values: columns.reduce((acc, c) =&gt; ({...acc, [c]: 0}), {})}]})} className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200 font-bold"&gt;+ 新增列&lt;/button&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button onClick={() =&gt; update({...experiment, columns: [...columns, `測試${columns.length+1}`]})} className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded hover:bg-green-200 font-bold"&gt;+ 新增欄&lt;/button&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>)}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="overflow-x-auto pb-4 flex-1"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div className="w-full flex flex-col"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3 className="font-bold text-gray-700 mb-3 flex justify-between"&gt;實驗數據 {!isExporting &amp;&amp; &lt;button onClick={() =&gt; updateExperiment({...experiment, columns: [...columns, `測試${columns.length+1}`]})} className="text-xs bg-green-100 text-green-700 px-2 rounded"&gt;+ 欄&lt;/button&gt;}&lt;/h3&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="overflow-x-auto"&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;table className="w-full text-left border-collapse text-sm"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;thead className="bg-gray-200 text-gray-700"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;th className="p-2 border rounded-tl-lg min-w-[100px] text-center"&gt;組別 \ 測試&lt;/th&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>{columns.map(col =&gt; &lt;th key={col} className="p-2 border min-w-[80px] text-center"&gt;{col}&lt;/th&gt;)}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;th className="p-2 border min-w-[150px] text-center text-gray-600"&gt;質性描述 (補充)&lt;/th&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/thead&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;thead className="bg-gray-200"&gt;&lt;tr&gt;&lt;th className="p-2 border"&gt;項目&lt;/th&gt;{columns.map(c =&gt; &lt;th key={c} className="p-2 border"&gt;{c}&lt;/th&gt;)}&lt;th className="p-2 border"&gt;質性描述&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;tbody&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{rows.map(row =&gt; (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;tr key={row.id} className="bg-white border-b hover:bg-gray-50"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;td className="p-2 border font-medium text-gray-800 text-center"&gt;{row.name}&lt;/td&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>{columns.map(col =&gt; (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;td key={col} className="p-1 border text-center align-middle"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;input type="number" className={`w-full outline-none text-center font-mono transition-all ${isExporting ? 'bg-transparent text-gray-800 py-1' : 'p-2 border rounded focus:ring-2 focus:ring-blue-400'}`} value={row.values[col] ?? 0} onChange={(e) =&gt; update({...experiment, rows: rows.map(r =&gt; r.id === row.id ? {...r, values: {...r.values, [col]: parseFloat(e.target.value)||0}} : r)})} readOnly={isExporting} /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;/td&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>))}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;td className="p-1 border text-center align-middle"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>{isExporting ? &lt;div className="text-left whitespace-pre-wrap break-words px-2 py-1 text-gray-700"&gt;{row.description || '-'}&lt;/div&gt; : &lt;textarea className="w-full min-h-[40px] p-2 border rounded outline-none focus:ring-2 focus:ring-blue-400 text-left resize-y bg-transparent" value={row.description || ''} onChange={(e) =&gt; update({...experiment, rows: rows.map(r =&gt; r.id === row.id ? {...r, description: e.target.value} : r)})} placeholder="輸入質性描述..." rows={1} /&gt;}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/td&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;tr key={row.id}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;td className="p-2 border"&gt;{row.name}&lt;/td&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>{columns.map(c =&gt; &lt;td key={c} className="p-1 border"&gt;&lt;input type="number" className="w-full text-center p-1" value={row.values[c]||0} onChange={(e) =&gt; update(rows.map(r =&gt; r.id === row.id ? {...r, values: {...r.values, [c]: parseFloat(e.target.value)||0}} : r))} /&gt;&lt;/td&gt;)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;td className="p-1 border"&gt;&lt;textarea className="w-full p-1 text-xs" value={row.description||''} onChange={(e) =&gt; update(rows.map(r =&gt; r.id === row.id ? {...r, description: e.target.value} : r))} rows={1} /&gt;&lt;/td&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;/tr&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>))}</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/tbody&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/table&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="mt-4 flex items-center gap-3 bg-white p-3 rounded-lg border border-gray-200 shadow-sm"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;label className="font-bold text-gray-700 whitespace-nowrap"&gt;數據單位：&lt;/label&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;input type="text" className={`flex-1 p-2 border-b outline-none transition-colors ${isExporting ? 'border-transparent bg-transparent text-gray-800' : 'border-gray-300 focus:border-blue-500 bg-transparent'}`} value={experiment.unit || ''} onChange={(e) =&gt; update({ ...experiment, unit: e.target.value })} placeholder="請輸入單位 (例如：公分、秒、次數...)" /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="mt-4 flex items-center gap-2"&gt;&lt;label className="font-bold text-sm"&gt;單位：&lt;/label&gt;&lt;input type="text" className="border-b p-1 text-sm outline-none" value={experiment.unit||''} onChange={(e)=&gt;updateExperiment({...experiment, unit:e.target.value})} /&gt;&lt;/div&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// ==========================================</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// 圖表元件</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// ==========================================</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>function DataChart({ experiment, isExporting }) {</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const { columns, rows } = experiment;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [chartType, setChartType] = useState('bar');<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const chartData = columns.map(col =&gt; { const point = { name: col }; rows.forEach(row =&gt; point[row.name] = Number(row.values[col]) || 0); return point; });</span></p>
-<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const chartData = columns.map(col =&gt; { const pt = { name: col }; rows.forEach(r =&gt; pt[r.name] = Number(r.values[col])||0); return pt; });</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>return (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div className="flex-1 flex flex-col h-full"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex justify-between items-center mb-6 border-b border-gray-200 pb-3"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h3 className="font-bold text-gray-700 flex items-center gap-2"&gt;&lt;i className="ph ph-chart-bar text-xl"&gt;&lt;/i&gt; 即時圖表&lt;/h3&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{!isExporting &amp;&amp; (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="flex items-center gap-2 bg-white p-1 rounded-lg border shadow-sm"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button className={`px-3 py-1.5 rounded-md text-sm font-medium transition flex items-center gap-1 ${chartType === 'bar' ? 'bg-blue-100 text-blue-700' : 'text-gray-500'}`} onClick={() =&gt; setChartType('bar')}&gt;&lt;i className="ph ph-chart-bar"&gt;&lt;/i&gt; 直條&lt;/button&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button className={`px-3 py-1.5 rounded-md text-sm font-medium transition flex items-center gap-1 ${chartType === 'line' ? 'bg-blue-100 text-blue-700' : 'text-gray-500'}`} onClick={() =&gt; setChartType('line')}&gt;&lt;i className="ph ph-activity"&gt;&lt;/i&gt; 折線&lt;/button&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>)}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex-1 min-h-[300px] flex items-center justify-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div className="h-full flex flex-col"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3 className="font-bold text-gray-700 mb-6 border-b pb-2"&gt;數據圖表&lt;/h3&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex-1 min-h-[300px] bg-white p-4 rounded-xl border"&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;ResponsiveContainer width="100%" height={300}&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>{chartType === 'line' ? (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;LineChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;XAxis dataKey="name" axisLine={false} tickLine={false} /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;YAxis axisLine={false} tickLine={false} /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;Tooltip /&gt; &lt;Legend wrapperStyle={{ paddingTop: '20px' }} /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>{rows.map((row, index) =&gt; &lt;Line key={row.id} type="monotone" dataKey={row.name} stroke={COLORS[index % COLORS.length]} strokeWidth={3} isAnimationActive={!isExporting} /&gt;)}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/LineChart&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>) : (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;BarChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;XAxis dataKey="name" axisLine={false} tickLine={false} /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;YAxis axisLine={false} tickLine={false} /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;Tooltip cursor={{fill: 'transparent'}} /&gt; &lt;Legend wrapperStyle={{ paddingTop: '20px' }} /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>{rows.map((row, index) =&gt; &lt;Bar key={row.id} dataKey={row.name} fill={COLORS[index % COLORS.length]} radius={[4, 4, 0, 0]} isAnimationActive={!isExporting} /&gt;)}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/BarChart&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;BarChart data={chartData}&gt;&lt;CartesianGrid strokeDasharray="3 3" vertical={false}/&gt;&lt;XAxis dataKey="name"/&gt;&lt;YAxis/&gt;&lt;Tooltip/&gt;&lt;Legend/&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{rows.map((r, i) =&gt; &lt;Bar key={r.id} dataKey={r.name} fill={COLORS[i % COLORS.length]} isAnimationActive={!isExporting}/&gt;)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/BarChart&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/ResponsiveContainer&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// 將 App 渲染到畫面上</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const root = ReactDOM.createRoot(document.getElementById('root'));</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>root.render(&lt;App /&gt;);</span></p>
 <p class="p3"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
