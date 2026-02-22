@@ -14,7 +14,6 @@
     p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000}
     p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000; min-height: 16.0px}
     p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #4d5055; -webkit-text-stroke: #4d5055}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6f0ec3; -webkit-text-stroke: #6f0ec3}
     span.s1 {font-kerning: none; background-color: #ecf1f7}
     span.s2 {font-kerning: none; color: #fb0007; background-color: #ecf1f7; -webkit-text-stroke: 0px #fb0007}
     span.s3 {font-kerning: none; color: #2a2a2a; background-color: #ecf1f7; -webkit-text-stroke: 0px #2a2a2a}
@@ -23,7 +22,6 @@
     span.s6 {font-kerning: none; color: #0000ff; background-color: #ecf1f7; -webkit-text-stroke: 0px #0000ff}
     span.s7 {font-kerning: none}
     span.s8 {font-kerning: none; color: #093c94; background-color: #ecf1f7; -webkit-text-stroke: 0px #093c94}
-    span.s9 {font-kerning: none; color: #18702b; background-color: #ecf1f7; -webkit-text-stroke: 0px #18702b}
   </style>
 </head>
 <body>
@@ -33,143 +31,399 @@
 <p class="p4"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s5"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s6">"UTF-8"</span><span class="s3">&gt;</span></p>
 <p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s5"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s5"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0"</span><span class="s3">&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">title</span><span class="s3">&gt;</span><span class="s1">實驗數據統計平台</span><span class="s3">&lt;/</span><span class="s4">title</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
-<p class="p7"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- 引入外掛函式庫：Tailwind, Icons, React, Recharts, html2canvas --&gt;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- 引入 Tailwind CSS --&gt;</span></p>
 <p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.tailwindcss.com"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/@phosphor-icons/web"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">crossorigin</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/react@18/umd/react.production.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">crossorigin</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/@babel/standalone/babel.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/recharts/umd/Recharts.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- 引入 HTML2Canvas (用於截圖功能) --&gt;</span></p>
 <p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
 <p class="p6"><span class="s7"></span><br></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- 引入 Babel 用於即時編譯 JSX --&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/@babel/standalone/babel.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- 設定 Import Map 解析 ES Modules 依賴 --&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"importmap"</span><span class="s3">&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>"imports": {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>"react": "https://esm.sh/react@18.2.0",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>"react-dom/client": "https://esm.sh/react-dom@18.2.0/client",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>"recharts": "https://esm.sh/recharts@2.12.0?deps=react@18.2.0,react-dom@18.2.0",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>"lucide-react": "https://esm.sh/lucide-react@0.344.0?deps=react@18.2.0",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>"firebase/app": "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>"firebase/auth": "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>"firebase/firestore": "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
 <p class="p3"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">/* 隱藏滾動條但保留滾動功能 */</span></p>
 <p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">.hide-scrollbar::-webkit-scrollbar</span><span class="s5"> { </span><span class="s2">display:</span><span class="s5"> </span><span class="s8">none</span><span class="s5">; }</span></p>
 <p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s4">.hide-scrollbar</span><span class="s5"> { </span><span class="s1">-ms-overflow-style:</span><span class="s5"> </span><span class="s8">none</span><span class="s5">; </span><span class="s1">scrollbar-width:</span><span class="s5"> </span><span class="s8">none</span><span class="s5">; }</span></p>
-<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s4">body</span><span class="s5"> { </span><span class="s1">font-family:</span><span class="s5"> </span><span class="s9">'Segoe UI'</span><span class="s5">, </span><span class="s8">system-ui</span><span class="s5">, </span><span class="s8">sans-serif</span><span class="s5">; </span><span class="s1">background-color:</span><span class="s5"> </span><span class="s8">#f9fafb</span><span class="s5">; }</span></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s4">.export-mode</span><span class="s5"> </span><span class="s4">input</span><span class="s5"> { </span><span class="s2">border:</span><span class="s5"> </span><span class="s8">none</span><span class="s5"> </span><span class="s1">!important</span><span class="s5">; </span><span class="s2">background:</span><span class="s5"> </span><span class="s8">transparent</span><span class="s5"> </span><span class="s1">!important</span><span class="s5">; }</span></p>
 <p class="p3"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
 <p class="p3"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
 <p class="p3"><span class="s3">&lt;</span><span class="s1">body</span><span class="s3">&gt;</span></p>
 <p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"root"</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
 <p class="p6"><span class="s7"></span><br></p>
+<p class="p7"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- 主程式腳本 --&gt;</span></p>
 <p class="p2"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"text/babel"</span><span class="s5"> </span><span class="s2">data-type</span><span class="s3">=</span><span class="s1">"module"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// --- 從 CDN 引入 Firebase (使用 ESM 語法) ---</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>import React, { useState, useEffect, useRef } from 'react';</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>import { createRoot } from 'react-dom/client';</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>import {<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList,<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>LineChart, Line, PieChart, Pie, Cell<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>} from 'recharts';</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>import {<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>Settings, Download, Plus, Trash2, Save, Upload, ImageIcon,<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>ChevronLeft, ChevronRight, ChevronUp, ChevronDown, Edit2, ArrowLeft,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>LogOut, BarChart2, PieChart as PieChartIcon, Activity, Cloud, CloudOff</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>} from 'lucide-react';</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const { useState, useEffect, useRef } = React;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList, LineChart, Line } = window.Recharts;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// --- Firebase 初始化設定 ---</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>import { initializeApp } from 'firebase/app';</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>import { getAuth, signInAnonymously, onAuthStateChanged } from 'firebase/auth';</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>import { getFirestore, doc, setDoc, onSnapshot } from 'firebase/firestore';</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// --- Firebase 設定 (已修正重複宣告問題) ---</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// ⚠️ 請在此處填寫你自己的 Firebase 設定，否則系統將以「單機模式」運行</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const firebaseConfig = {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>apiKey: "AIzaSyAdO41X5cNZmeC7SUGEt17hRXN3rgauUB8",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>authDomain: "experiment-platform-489f0.firebaseapp.com",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>projectId: "experiment-platform-489f0",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>storageBucket: "experiment-platform-489f0.firebasestorage.app",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>messagingSenderId: "291865361226",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>appId: "1:291865361226:web:8ae57d4c5efc422e001fb3",</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>measurementId: "G-Z6PGSL59Y0"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>// apiKey: "YOUR_API_KEY",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>// authDomain: "YOUR_AUTH_DOMAIN",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>// projectId: "YOUR_PROJECT_ID",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>// storageBucket: "YOUR_STORAGE_BUCKET",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>// messagingSenderId: "YOUR_MESSAGING_SENDER_ID",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>// appId: "YOUR_APP_ID"</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>let app, auth, db;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const appId = "my-platform-v1";</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const hasFirebaseConfig = Object.keys(firebaseConfig).length &gt; 0;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const appId = 'standalone-lab-app';</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>try {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>app = initializeApp(firebaseConfig);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>auth = getAuth(app);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>db = getFirestore(app);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>} catch (e) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>console.error("Firebase 初始化失敗，改用離線模式", e);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>let app, auth, db;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>if (hasFirebaseConfig) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>try {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>app = initializeApp(firebaseConfig);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>auth = getAuth(app);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>db = getFirestore(app);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>} catch (error) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>console.error("Firebase 初始化失敗:", error);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const DEFAULT_DATA = { groups: ['紙飛機', '彈珠台'], data: {} };</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// --- 常數與預設值 ---</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const TEACHER_PWD = '8557';</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899'];</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// --- 主程式邏輯 ---</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>function App() {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const DEFAULT_DATA = {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>groups: ['紙飛機', '彈珠台'],</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>data: {}<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const createDefaultExperiment = () =&gt; ({</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>id: Date.now().toString(),</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>name: '未命名實驗',</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>recordMethod: '',<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>unit: '',<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>columns: ['測試一', '測試二'],</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>rows: [</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>{ id: `r-${Date.now()}-1`, name: '實驗組', values: { '測試一': 0, '測試二': 0 } },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>{ id: `r-${Date.now()}-2`, name: '對照組', values: { '測試一': 0, '測試二': 0 } }</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>]</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// --- 主應用程式元件 ---</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const App = () =&gt; {</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [appData, setAppData] = useState(DEFAULT_DATA);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [currentView, setCurrentView] = useState('login');</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [currentView, setCurrentView] = useState('login'); // 'login' | 'teacher' | 'student'</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [currentGroup, setCurrentGroup] = useState('');</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [user, setUser] = useState(null);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [modal, setModal] = useState(null);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [isSyncing, setIsSyncing] = useState(false);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [user, setUser] = useState(null);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [isCloudSyncing, setIsCloudSyncing] = useState(false);</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>// 彈窗處理</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const showModal = (msg, type = 'alert', defaultValue = '') =&gt; new Promise(res =&gt; setModal({ msg, type, defaultValue, resolve: res }));</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const showModal = (config) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>return new Promise((resolve) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>setModal({ ...config, onResolve: resolve });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>// 登入</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleModalSubmit = (result) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (modal &amp;&amp; modal.onResolve) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>modal.onResolve(result);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>setModal(null);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>// 1. 初始化身分驗證 (如果 Firebase 有設定)</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>useEffect(() =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!auth) return;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>signInAnonymously(auth).catch(console.error);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>return onAuthStateChanged(auth, setUser);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!hasFirebaseConfig || !auth) return;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const initAuth = async () =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>try {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>await signInAnonymously(auth);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>} catch (err) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>console.error("驗證失敗:", err);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>initAuth();</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const unsubscribeAuth = onAuthStateChanged(auth, setUser);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>return () =&gt; unsubscribeAuth();</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}, []);</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>// 雲端同步</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>// 2. 登入後即時同步雲端資料庫</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>useEffect(() =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!user || !db) return;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>setIsSyncing(true);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const unsubscribe = onSnapshot(doc(db, 'artifacts', appId, 'public', 'data', 'main'), (snap) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>if (snap.exists()) setAppData(snap.data());</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>setIsSyncing(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!hasFirebaseConfig || !db || !user) return;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>setIsCloudSyncing(true);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'platformData', 'main');</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const unsubscribeDb = onSnapshot(docRef, (docSnap) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>if (docSnap.exists()) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>setAppData(docSnap.data());</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>} else {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>setDoc(docRef, DEFAULT_DATA);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>setIsCloudSyncing(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}, (error) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>console.error("讀取雲端資料失敗:", error);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>setIsCloudSyncing(false);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>return unsubscribe;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>return () =&gt; unsubscribeDb();</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}, [user]);</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const save = async (newData) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>// 3. 儲存資料</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const saveData = async (newData) =&gt; {</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>setAppData(newData);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (db &amp;&amp; user) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>setIsSyncing(true);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>await setDoc(doc(db, 'artifacts', appId, 'public', 'data', 'main'), newData);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>setIsSyncing(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (hasFirebaseConfig &amp;&amp; db &amp;&amp; user) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>setIsCloudSyncing(true);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>try {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'platformData', 'main');</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>await setDoc(docRef, newData);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>} catch (err) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>console.error("儲存至雲端失敗:", err);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>} finally {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>setIsCloudSyncing(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleEnter = (g) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>setCurrentGroup(g);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!appData.data[g]) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const newData = { ...appData, data: { ...appData.data, [g]: [{ id: Date.now().toString(), name: '新實驗', columns: ['測試一'], rows: [{ id: 'r1', name: '實驗組', values: { '測試一': 0 } }] }] } };</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>save(newData);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleEnterGroup = (group) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>setCurrentGroup(group);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const newData = { ...appData };</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!newData.data[group] || newData.data[group].length === 0) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>newData.data[group] = [createDefaultExperiment()];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>saveData(newData);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>setCurrentView('student');</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
 <p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>return (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div className="min-h-screen"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div className="min-h-screen bg-gray-50 text-gray-800 font-sans"&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;nav className="bg-blue-600 text-white p-4 shadow-md flex justify-between items-center"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h1 className="text-xl font-bold flex items-center gap-2"&gt;&lt;i className="ph ph-activity"&gt;&lt;/i&gt; 實驗數據統計平台&lt;/h1&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{currentView !== 'login' &amp;&amp; &lt;button onClick={() =&gt; setCurrentView('login')} className="text-sm border border-white/50 px-3 py-1 rounded hover:bg-white/10 transition"&gt;返回首頁&lt;/button&gt;}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="flex items-center gap-2"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;Activity className="w-6 h-6" /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;h1 className="text-xl font-bold tracking-wide"&gt;實驗數據統計平台&lt;/h1&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="flex items-center gap-4"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>{(currentView === 'teacher' || currentView === 'student') &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>onClick={() =&gt; setCurrentView('login')}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>className="flex items-center gap-1 hover:bg-blue-700 px-3 py-1 rounded transition"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;LogOut className="w-4 h-4" /&gt; 返回首頁</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/nav&gt;</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;main className="p-4 max-w-6xl mx-auto"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{currentView === 'login' ? (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="flex flex-col items-center py-20"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-sm text-center"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;h2 className="text-2xl font-bold mb-6 text-gray-700"&gt;選擇組別&lt;/h2&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;select className="w-full p-3 border rounded-xl mb-6 outline-none focus:ring-2 focus:ring-blue-500" value={currentGroup} onChange={e =&gt; setCurrentGroup(e.target.value)}&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;請選擇...&lt;/option&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>{appData.groups.map(g =&gt; &lt;option key={g} value={g}&gt;{g}&lt;/option&gt;)}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;/select&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;button onClick={() =&gt; handleEnter(currentGroup)} disabled={!currentGroup} className="w-full bg-blue-600 text-white font-bold py-3 rounded-xl disabled:opacity-50 hover:bg-blue-700 transition"&gt;進入平台&lt;/button&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>) : (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;StudentView group={currentGroup} appData={appData} save={save} isSyncing={isSyncing} showModal={showModal} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;main className="p-4 md:p-8 max-w-7xl mx-auto"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{currentView === 'login' &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;LoginView<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>groups={appData.groups}<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>onEnter={handleEnterGroup}<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>onTeacherLogin={() =&gt; setCurrentView('teacher')}<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>appData={appData}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>saveData={saveData}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>showModal={showModal}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>hasFirebaseConfig={hasFirebaseConfig}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>/&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{currentView === 'teacher' &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;TeacherView appData={appData} saveData={saveData} showModal={showModal} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{currentView === 'student' &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;StudentWorkspace<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>group={currentGroup}<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>appData={appData}<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>saveData={saveData}<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>showModal={showModal}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>isCloudSyncing={isCloudSyncing}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>hasFirebaseConfig={hasFirebaseConfig}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>/&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>)}</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/main&gt;</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>{/* Modal */}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>{/* 彈窗 UI */}</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>{modal &amp;&amp; (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="bg-white p-6 rounded-2xl shadow-2xl w-full max-w-sm"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 className="text-lg font-bold mb-4"&gt;系統提示&lt;/h3&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p className="text-gray-600 mb-6"&gt;{modal.msg}&lt;/p&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{modal.type === 'prompt' &amp;&amp; &lt;input id="m-input" autoFocus className="w-full p-2 border rounded-lg mb-4 outline-none focus:border-blue-500" defaultValue={modal.defaultValue} /&gt;}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div className="flex justify-end gap-2"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>{modal.type !== 'alert' &amp;&amp; &lt;button onClick={() =&gt; { modal.resolve(null); setModal(null); }} className="px-4 py-2 text-gray-500 hover:bg-gray-100 rounded-lg"&gt;取消&lt;/button&gt;}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;button onClick={() =&gt; { const val = modal.type === 'prompt' ? document.getElementById('m-input').value : true; modal.resolve(val); setModal(null); }} className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-bold"&gt;確定&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="fixed inset-0 bg-black/60 flex items-center justify-center z-[100] p-4"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className={`bg-white p-6 rounded-xl shadow-2xl transform transition-all ${modal.type === 'image' ? 'w-[90vw] max-w-5xl' : 'w-96 max-w-[90vw]'}`}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 className="text-xl font-bold mb-4 text-gray-800"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>{modal.type === 'alert' ? '提示' : modal.type === 'confirm' ? '請確認' : modal.type === 'image' ? '圖片預覽 (請右鍵下載)' : '請輸入'}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/h3&gt;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{modal.type !== 'image' &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;p className="mb-5 text-gray-600 leading-relaxed"&gt;{modal.message}&lt;/p&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>)}</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{modal.type === 'prompt' &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                   </span>&lt;input<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span>autoFocus</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span>type="text"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span>id="prompt-input"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span>className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-blue-500 outline-none"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span>defaultValue={modal.defaultValue || ''}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span>onKeyDown={(e) =&gt; { if(e.key === 'Enter') handleModalSubmit(e.target.value) }}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                   </span>/&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>)}</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{modal.type === 'image' &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div className="flex flex-col items-center"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div className="w-full max-h-[65vh] overflow-y-auto bg-gray-100 border border-gray-300 rounded-lg mb-4 p-2"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;img src={modal.imageUrl} alt="Exported Chart" className="w-full h-auto object-contain pointer-events-auto" /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p className="text-md text-red-600 font-bold bg-red-50 px-4 py-2 rounded-lg border border-red-100"&gt;{modal.message}&lt;/p&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>)}</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div className="flex justify-end gap-3 mt-2"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>{modal.type !== 'alert' &amp;&amp; modal.type !== 'image' &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button onClick={() =&gt; handleModalSubmit(null)} className="px-5 py-2 text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-lg transition font-medium"&gt;取消&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;button<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>onClick={() =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>if (modal.type === 'prompt') {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>handleModalSubmit(document.getElementById('prompt-input').value);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>} else {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>handleModalSubmit(true);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}}<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium shadow-sm"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>{modal.type === 'image' ? '關閉預覽' : '確定'}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;/button&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// --- 子元件區 ---</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>function LoginView({ groups, onEnter, onTeacherLogin, appData, saveData, showModal, hasFirebaseConfig }) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [selectedGroup, setSelectedGroup] = useState(groups[0] || '');</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [pwdModal, setPwdModal] = useState(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [pwd, setPwd] = useState('');</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleTeacherSubmit = async (e) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>e.preventDefault();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (pwd === TEACHER_PWD) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>setPwdModal(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>setPwd('');</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>onTeacherLogin();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>} else {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>await showModal({ type: 'alert', message: '密碼錯誤！' });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleImportJSON = (e) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const file = e.target.files[0];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!file) return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const reader = new FileReader();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>reader.onload = async (event) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>try {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const json = JSON.parse(event.target.result);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>if (json.groups &amp;&amp; typeof json.data === 'object') {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>saveData(json);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>const msg = hasFirebaseConfig ? '成功匯入備份檔並同步至雲端！' : '成功匯入備份檔！(單機模式)';</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>await showModal({ type: 'alert', message: msg });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>} else {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>await showModal({ type: 'alert', message: '檔案格式不正確' });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>} catch (err) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>await showModal({ type: 'alert', message: '讀取檔案失敗' });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>reader.readAsText(file);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>return (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div className="flex flex-col items-center justify-center min-h-[70vh]"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>{!hasFirebaseConfig &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">             </span>&lt;div className="mb-6 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded w-full max-w-md text-sm"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">               </span>&lt;p className="font-bold flex items-center gap-2"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                 </span>&lt;CloudOff className="w-5 h-5"/&gt; 單機模式運行中</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">               </span>&lt;/p&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">               </span>&lt;p&gt;目前未設定 Firebase 雲端環境，資料將僅保存在本地瀏覽器。離開前請記得使用「匯出 JSON 備份」功能。&lt;/p&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">             </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>)}</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md text-center border border-gray-100"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2 className="text-2xl font-bold mb-6 text-gray-700"&gt;選擇組別&lt;/h2&gt;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="mb-6"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;select<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>value={selectedGroup}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>onChange={(e) =&gt; setSelectedGroup(e.target.value)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{groups.length === 0 &amp;&amp; &lt;option value=""&gt;無組別 (請請教師新增)&lt;/option&gt;}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{groups.map(g =&gt; &lt;option key={g} value={g}&gt;{g}&lt;/option&gt;)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/select&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>onClick={() =&gt; selectedGroup &amp;&amp; onEnter(selectedGroup)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>disabled={!selectedGroup}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>className="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 disabled:opacity-50 transition shadow-md"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>進入實驗平台</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;hr className="my-8 border-gray-200" /&gt;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="flex justify-between gap-4"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;label className="flex-1 cursor-pointer bg-gray-100 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-200 transition flex items-center justify-center gap-2 text-sm font-bold"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;Upload className="w-4 h-4" /&gt; 匯入 JSON</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input type="file" accept=".json" className="hidden" onChange={handleImportJSON} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/label&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;button<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>onClick={() =&gt; setPwdModal(true)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>className="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-200 transition flex items-center justify-center gap-2 text-sm font-bold"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;Settings className="w-4 h-4" /&gt; 教師後台</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>{pwdModal &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="bg-white p-6 rounded-lg shadow-xl w-80"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 className="text-xl font-bold mb-4"&gt;教師登入&lt;/h3&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;form onSubmit={handleTeacherSubmit}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;input<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>type="password"<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>placeholder="請輸入密碼"<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>className="w-full p-2 border rounded mb-4 focus:ring-2 focus:ring-blue-500 outline-none"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>value={pwd}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>onChange={e =&gt; setPwd(e.target.value)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>autoFocus</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>/&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div className="flex justify-end gap-2"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button type="button" onClick={() =&gt; setPwdModal(false)} className="px-4 py-2 text-gray-500 hover:bg-gray-100 rounded"&gt;取消&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"&gt;登入&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/form&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>)}</span></p>
@@ -177,98 +431,259 @@
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>function StudentView({ group, appData, save, isSyncing, showModal }) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const exps = appData.data[group] || [];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [activeId, setActiveId] = useState(exps[0]?.id);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [isExporting, setIsExporting] = useState(false);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const activeExp = exps.find(e =&gt; e.id === activeId) || exps[0];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>function TeacherView({ appData, saveData, showModal }) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [newGroup, setNewGroup] = useState('');</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const updateExp = (updated) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const newData = { ...appData, data: { ...appData.data, [group]: exps.map(e =&gt; e.id === updated.id ? updated : e) } };</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>save(newData);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleAddGroup = async () =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const trimmed = newGroup.trim();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!trimmed) return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (appData.groups.includes(trimmed)) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>await showModal({ type: 'alert', message: '組別已存在！' }); return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const newData = { ...appData, groups: [...appData.groups, trimmed] };</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>saveData(newData);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>setNewGroup('');</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleDownload = async () =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>setIsExporting(true);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>await new Promise(r =&gt; setTimeout(r, 500));</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const canvas = await html2canvas(document.getElementById('chart-area'), { scale: 2 });</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const link = document.createElement('a');</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>link.download = `實驗數據_${activeExp.name}.png`;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>link.href = canvas.toDataURL();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleRemoveGroup = async (group) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const confirmed = await showModal({ type: 'confirm', message: `確定要刪除「${group}」嗎？所有相關數據將被移除！` });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (confirmed) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const newData = {<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>...appData,<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>groups: appData.groups.filter(g =&gt; g !== group)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>};</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>delete newData.data[group];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>saveData(newData);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleExportAllCSV = () =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>let csv = "\uFEFF組別,實驗名稱,列名(變數),欄名(測試項目),數值\n";</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>appData.groups.forEach(group =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const exps = appData.data[group] || [];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>exps.forEach(exp =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>exp.rows.forEach(row =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>exp.columns.forEach(col =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>const val = row.values[col] || 0;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>csv += `"${group}","${exp.name}","${row.name}","${col}",${val}\n`;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>});</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>});</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const url = URL.createObjectURL(blob);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const link = document.createElement("a");</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>link.href = url;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>link.download = `所有實驗數據_${new Date().toISOString().slice(0,10)}.csv`;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>document.body.appendChild(link);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>link.click();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>setIsExporting(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>document.body.removeChild(link);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>if (!activeExp) return &lt;div className="text-center py-20 text-gray-400"&gt;載入中...&lt;/div&gt;;</span></p>
 <p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>return (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div className="space-y-6"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex justify-between items-center bg-white p-4 rounded-xl shadow-sm border"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="flex items-center gap-3"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span className="font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-lg"&gt;組別：{group}&lt;/span&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span className={`text-xs font-medium px-2 py-1 rounded-full border ${isSyncing ? 'bg-amber-50 text-amber-600 border-amber-200' : 'bg-green-50 text-green-600 border-green-200'}`}&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{isSyncing ? '同步中...' : '已儲存至雲端'}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/span&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button onClick={handleDownload} className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 font-bold text-sm shadow-md transition-all active:scale-95"&gt;&lt;i className="ph ph-download-simple"&gt;&lt;/i&gt; 下載圖表&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div className="bg-white p-6 rounded-xl shadow border border-gray-100"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex justify-between items-center mb-6"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2 className="text-2xl font-bold flex items-center gap-2"&gt;&lt;Settings className="text-gray-500"/&gt; 教師管理後台&lt;/h2&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>onClick={handleExportAllCSV}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition flex items-center gap-2"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;Download className="w-4 h-4" /&gt; 下載全部數據 (CSV)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div id="chart-area" className={`bg-white p-6 rounded-2xl shadow-sm border ${isExporting ? 'export-mode' : ''}`}&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="mb-8 space-y-4"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="flex items-center gap-2"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label className="font-bold text-gray-500 whitespace-nowrap"&gt;實驗名稱：&lt;/label&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input className="text-2xl font-black w-full outline-none focus:border-b-2 border-blue-500" value={activeExp.name} onChange={e =&gt; updateExp({...activeExp, name: e.target.value})} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="mb-8"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h3 className="text-lg font-semibold mb-3 border-b pb-2"&gt;組別管理&lt;/h3&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="flex gap-2 mb-4"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;input<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>type="text"<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>placeholder="輸入新組別名稱..."<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>className="flex-1 max-w-sm p-2 border rounded-lg outline-none focus:border-blue-500"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>value={newGroup}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>onChange={(e) =&gt; setNewGroup(e.target.value)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>onKeyDown={(e) =&gt; e.key === 'Enter' &amp;&amp; handleAddGroup()}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>/&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;button onClick={handleAddGroup} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-1"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;Plus className="w-4 h-4"/&gt; 新增</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>{appData.groups.map(g =&gt; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li key={g} className="bg-gray-50 border p-3 rounded-lg flex justify-between items-center"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;span className="font-medium text-gray-700"&gt;{g}&lt;/span&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;button onClick={() =&gt; handleRemoveGroup(g)} className="text-red-500 hover:text-red-700 p-1 bg-red-50 rounded hover:bg-red-100 transition"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;Trash2 className="w-4 h-4" /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/li&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>))}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>{appData.groups.length === 0 &amp;&amp; &lt;p className="text-gray-500 italic"&gt;目前沒有任何組別&lt;/p&gt;}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>function StudentWorkspace({ group, appData, saveData, showModal, isCloudSyncing, hasFirebaseConfig }) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const groupExps = appData.data[group] || [];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [activeTabId, setActiveTabId] = useState(groupExps[0]?.id || null);</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>useEffect(() =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (groupExps.length &gt; 0 &amp;&amp; !activeTabId) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>setActiveTabId(groupExps[0].id);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}, [groupExps, activeTabId]);</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const activeExp = groupExps.find(e =&gt; e.id === activeTabId) || groupExps[0];</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const updateExperiments = (newExps) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const newData = { ...appData };</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>newData.data[group] = newExps;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>saveData(newData);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const updateCurrentExperiment = (updatedExp) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const newExps = groupExps.map(e =&gt; e.id === updatedExp.id ? updatedExp : e);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>updateExperiments(newExps);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleAddExperiment = () =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const newExp = createDefaultExperiment();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>updateExperiments([...groupExps, newExp]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>setActiveTabId(newExp.id);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleRemoveExperiment = async (id) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (groupExps.length === 1) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>await showModal({ type: 'alert', message: "至少需保留一個實驗！" });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const confirmed = await showModal({ type: 'confirm', message: '確定要刪除此實驗嗎？' });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (confirmed) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const newExps = groupExps.filter(e =&gt; e.id !== id);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>updateExperiments(newExps);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>if (activeTabId === id) setActiveTabId(newExps[0].id);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleExportJSON = () =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const blob = new Blob([JSON.stringify(appData, null, 2)], { type: 'application/json' });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const url = URL.createObjectURL(blob);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const link = document.createElement('a');</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>link.href = url;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>link.download = `實驗平台備份_${new Date().toISOString().slice(0,10)}.json`;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>link.click();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const handleExportImage = async () =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const el = document.getElementById('export-area');</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!el) return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!window.html2canvas) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>await showModal({ type: 'alert', message: '正在載入截圖模組，請稍後再試。' }); return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>try {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const canvas = await window.html2canvas(el, {<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>backgroundColor: '#ffffff',<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>scale: 2,<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>useCORS: true,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>scrollY: -window.scrollY</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>});</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const imgData = canvas.toDataURL('image/jpeg', 1.0);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>await showModal({<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>type: 'image',<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>imageUrl: imgData,<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>message: '👉 請在此圖片上「點擊滑鼠右鍵」或「長按圖片」，並選擇「另存圖片」即可下載。'<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>});</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>} catch (err) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>console.error('Export failed', err);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>await showModal({ type: 'alert', message: '匯出圖片失敗' });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>if (!activeExp) return &lt;div&gt;載入中...&lt;/div&gt;;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>return (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div className="space-y-4"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-4 rounded-lg shadow-sm border border-gray-100"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="flex items-center gap-3"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span className="text-sm text-gray-700 font-bold bg-gray-100 px-3 py-1.5 rounded-lg"&gt;組別：{group}&lt;/span&gt;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>{hasFirebaseConfig ? (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                 </span>&lt;span className={`text-xs flex items-center gap-1 px-2 py-1.5 rounded-lg border font-bold transition-colors ${isCloudSyncing ? 'text-blue-600 bg-blue-50 border-blue-200' : 'text-green-600 bg-green-50 border-green-200'}`}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                   </span>&lt;Cloud className="w-4 h-4" /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                   </span>{isCloudSyncing ? '雲端同步中...' : '已自動儲存至雲端'}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                 </span>&lt;/span&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>) : (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                 </span>&lt;span className="text-xs flex items-center gap-1 px-2 py-1.5 rounded-lg border font-bold text-yellow-700 bg-yellow-50 border-yellow-200"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                   </span>&lt;CloudOff className="w-4 h-4" /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                   </span>單機模式 (未同步)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                 </span>&lt;/span&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="flex flex-wrap gap-2"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;button type="button" onClick={handleExportJSON} className="bg-gray-100 text-gray-700 px-3 py-1.5 rounded hover:bg-gray-200 flex items-center gap-1 text-sm font-bold"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;Download className="w-4 h-4" /&gt; 匯出備份檔</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;button type="button" onClick={handleExportImage} className="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 flex items-center gap-1 text-sm font-bold"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;ImageIcon className="w-4 h-4" /&gt; 預覽/下載截圖</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex overflow-x-auto hide-scrollbar gap-2 border-b pb-2"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{groupExps.map(exp =&gt; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>key={exp.id}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>className={`flex items-center gap-2 px-4 py-2 rounded-t-lg cursor-pointer whitespace-nowrap border-t border-l border-r transition-colors ${activeTabId === exp.id ? 'bg-white font-bold border-gray-200 border-b-white text-blue-600 -mb-[9px]' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>onClick={() =&gt; setActiveTabId(exp.id)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{exp.name}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{activeTabId === exp.id &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;Trash2<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>className="w-3 h-3 text-gray-400 hover:text-red-500 ml-1"<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>onClick={(e) =&gt; { e.stopPropagation(); handleRemoveExperiment(exp.id); }}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>/&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>))}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button onClick={handleAddExperiment} className="px-3 py-2 text-blue-600 hover:bg-blue-50 rounded-t-lg flex items-center gap-1 border border-transparent"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;Plus className="w-4 h-4" /&gt; 新增實驗</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div id="export-area" className="bg-white p-6 rounded-b-xl rounded-tr-xl shadow-sm border border-gray-200"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="mb-6 flex flex-col gap-4"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="flex items-center gap-3"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label className="font-bold text-gray-700 whitespace-nowrap text-lg"&gt;實驗名稱：&lt;/label&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>type="text"<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>className="flex-1 max-w-md p-2 text-lg border-b-2 border-gray-200 focus:border-blue-500 outline-none bg-transparent font-bold"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>value={activeExp.name}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>onChange={(e) =&gt; updateCurrentExperiment({ ...activeExp, name: e.target.value })}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>placeholder="請輸入實驗名稱..."</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>/&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="flex items-center gap-3"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label className="font-bold text-gray-700 whitespace-nowrap text-md"&gt;紀錄方式：&lt;/label&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>type="text"<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>className="flex-1 max-w-md p-2 text-md border-b border-gray-200 focus:border-blue-500 outline-none bg-transparent"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>value={activeExp.recordMethod || ''}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>onChange={(e) =&gt; updateCurrentExperiment({ ...activeExp, recordMethod: e.target.value })}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>placeholder="請輸入實驗紀錄方式 (例如：縮時攝影、碼錶計時...)"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>/&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
 <p class="p6"><span class="s7"></span><br></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="grid grid-cols-1 lg:grid-cols-2 gap-8"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="space-y-4"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div className="flex justify-between items-center"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;h3 className="font-bold text-lg flex items-center gap-2 text-gray-700"&gt;&lt;i className="ph ph-table"&gt;&lt;/i&gt; 數據表格&lt;/h3&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>{!isExporting &amp;&amp; (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div className="flex gap-2"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;button onClick={() =&gt; updateExp({...activeExp, columns: [...activeExp.columns, `測試${activeExp.columns.length+1}`]})} className="text-xs bg-green-50 text-green-600 px-2 py-1 rounded border border-green-200 hover:bg-green-100 font-bold"&gt;+ 欄位&lt;/button&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;button onClick={() =&gt; updateExp({...activeExp, rows: [...activeExp.rows, { id: Date.now().toString(), name: '新數據', values: {} }]})} className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded border border-blue-200 hover:bg-blue-100 font-bold"&gt;+ 列位&lt;/button&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>)}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div className="overflow-x-auto"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;table className="w-full text-sm border-collapse"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;thead&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;tr className="bg-gray-100 text-gray-600"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;th className="p-3 border"&gt;項目&lt;/th&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{activeExp.columns.map(c =&gt; &lt;th key={c} className="p-3 border"&gt;{c}&lt;/th&gt;)}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;/tr&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/thead&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;tbody&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>{activeExp.rows.map(row =&gt; (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;tr key={row.id}&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                          </span>&lt;td className="p-2 border font-bold text-gray-700"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;input className="w-full text-center outline-none" value={row.name} onChange={e =&gt; updateExp({...activeExp, rows: activeExp.rows.map(r =&gt; r.id === row.id ? {...r, name: e.target.value} : r)})} readOnly={isExporting} /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                          </span>&lt;/td&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                          </span>{activeExp.columns.map(c =&gt; (</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;td key={c} className="p-2 border"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                              </span>&lt;input type="number" className="w-full text-center outline-none font-mono" value={row.values[c] || 0} onChange={e =&gt; updateExp({...activeExp, rows: activeExp.rows.map(r =&gt; r.id === row.id ? {...r, values: {...r.values, [c]: parseFloat(e.target.value)||0}} : r)})} readOnly={isExporting} /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/td&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                          </span>))}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/tr&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>))}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/tbody&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;/table&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="overflow-x-auto bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;DataTable experiment={activeExp} updateExperiment={updateCurrentExperiment} showModal={showModal} /&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
-<p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="space-y-4"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3 className="font-bold text-lg flex items-center gap-2 text-gray-700"&gt;&lt;i className="ph ph-chart-bar"&gt;&lt;/i&gt; 統計圖表&lt;/h3&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div className="bg-gray-50 p-4 rounded-xl border border-dashed border-gray-300 min-h-[300px]"&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;ResponsiveContainer width="100%" height={300}&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;BarChart data={activeExp.columns.map(c =&gt; ({ name: c, ...activeExp.rows.reduce((acc, r) =&gt; ({ ...acc, [r.name]: r.values[c] || 0 }), {}) }))}&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;CartesianGrid strokeDasharray="3 3" vertical={false} /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;XAxis dataKey="name" /&gt; &lt;YAxis /&gt; &lt;Tooltip /&gt; &lt;Legend /&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>{activeExp.rows.map((r, i) =&gt; &lt;Bar key={r.id} dataKey={r.name} fill={COLORS[i % COLORS.length]} radius={[4, 4, 0, 0]} isAnimationActive={!isExporting} /&gt;)}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/BarChart&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;/ResponsiveContainer&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div className="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;DataChart experiment={activeExp} /&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
@@ -276,7 +691,328 @@
 <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>);</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
 <p class="p6"><span class="s7"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const root = ReactDOM.createRoot(document.getElementById('root'));</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>function DataTable({ experiment, updateExperiment, showModal }) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const { columns, rows } = experiment;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const addColumn = async () =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>let name = await showModal({ type: 'prompt', message: "請輸入新欄位名稱 (例如：測試三)" });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!name) return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>name = name.trim();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (columns.includes(name)) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>await showModal({ type: 'alert', message: "欄位名稱已存在！" }); return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>updateExperiment({ ...experiment, columns: [...columns, name] });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const renameColumn = async (oldName) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>let newName = await showModal({ type: 'prompt', message: "重新命名欄位：", defaultValue: oldName });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!newName) return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>newName = newName.trim();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (newName === oldName) return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (columns.includes(newName)) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>await showModal({ type: 'alert', message: "欄位名稱已存在！" }); return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const newCols = columns.map(c =&gt; c === oldName ? newName : c);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const newRows = rows.map(r =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const newVals = { ...r.values };</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>newVals[newName] = newVals[oldName];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>delete newVals[oldName];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>return { ...r, values: newVals };</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>updateExperiment({ ...experiment, columns: newCols, rows: newRows });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const removeColumn = async (colName) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (columns.length &lt;= 1) { await showModal({ type: 'alert', message: "至少保留一個欄位！" }); return; }</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const confirmed = await showModal({ type: 'confirm', message: `確定刪除「${colName}」？` });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (confirmed) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const newCols = columns.filter(c =&gt; c !== colName);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const newRows = rows.map(r =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const newVals = { ...r.values };</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>delete newVals[colName];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>return { ...r, values: newVals };</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>});</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>updateExperiment({ ...experiment, columns: newCols, rows: newRows });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const moveColumn = (index, dir) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (index + dir &lt; 0 || index + dir &gt;= columns.length) return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const newCols = [...columns];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const temp = newCols[index];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>newCols[index] = newCols[index + dir];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>newCols[index + dir] = temp;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>updateExperiment({ ...experiment, columns: newCols });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const addRow = async () =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>let name = await showModal({ type: 'prompt', message: "請輸入新列名稱 (例如：實驗組 B)" });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!name) return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>name = name.trim();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const newRow = { id: `r-${Date.now()}`, name, values: {} };</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>columns.forEach(c =&gt; newRow.values[c] = 0);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>updateExperiment({ ...experiment, rows: [...rows, newRow] });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const renameRow = async (rowId, oldName) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>let newName = await showModal({ type: 'prompt', message: "重新命名列：", defaultValue: oldName });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!newName) return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>newName = newName.trim();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const newRows = rows.map(r =&gt; r.id === rowId ? { ...r, name: newName } : r);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>updateExperiment({ ...experiment, rows: newRows });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const removeRow = async (rowId) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (rows.length &lt;= 1) { await showModal({ type: 'alert', message: "至少保留一列！" }); return; }</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const confirmed = await showModal({ type: 'confirm', message: "確定刪除此列？" });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (confirmed) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>updateExperiment({ ...experiment, rows: rows.filter(r =&gt; r.id !== rowId) });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const moveRow = (index, dir) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (index + dir &lt; 0 || index + dir &gt;= rows.length) return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const newRows = [...rows];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const temp = newRows[index];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>newRows[index] = newRows[index + dir];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>newRows[index + dir] = temp;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>updateExperiment({ ...experiment, rows: newRows });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const updateCellValue = (rowId, colName, valStr) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const val = parseFloat(valStr);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const newRows = rows.map(r =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>if (r.id === rowId) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>return { ...r, values: { ...r.values, [colName]: isNaN(val) ? 0 : val } };</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>return r;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>updateExperiment({ ...experiment, rows: newRows });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>return (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div className="w-full flex flex-col h-full"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex justify-between items-center mb-3"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h3 className="font-bold text-gray-700 flex items-center gap-2"&gt;&lt;Edit2 className="w-4 h-4"/&gt; 實驗數據區&lt;/h3&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="flex gap-2"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;button onClick={addRow} className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200 flex items-center gap-1"&gt;+ 新增列&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;button onClick={addColumn} className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded hover:bg-green-200 flex items-center gap-1"&gt;+ 新增欄&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="overflow-x-auto pb-4 flex-1"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;table className="w-full text-sm text-left border-collapse"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;thead className="bg-gray-200 text-gray-700"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;th className="p-3 border rounded-tl-lg min-w-[120px]"&gt;組別 \ 測試&lt;/th&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>{columns.map((col, idx) =&gt; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;th key={col} className="p-3 border min-w-[140px] relative group"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;div className="flex flex-col gap-1 items-center"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="flex items-center gap-1"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                           </span>&lt;button onClick={() =&gt; moveColumn(idx, -1)} disabled={idx===0} className="text-gray-400 hover:text-blue-600 disabled:opacity-0"&gt;&lt;ChevronLeft className="w-4 h-4"/&gt;&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                           </span>&lt;span className="font-bold"&gt;{col}&lt;/span&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                           </span>&lt;button onClick={() =&gt; moveColumn(idx, 1)} disabled={idx===columns.length-1} className="text-gray-400 hover:text-blue-600 disabled:opacity-0"&gt;&lt;ChevronRight className="w-4 h-4"/&gt;&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                          </span>&lt;button onClick={() =&gt; renameColumn(col)} className="text-blue-600 hover:underline text-xs"&gt;重新命名&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                          </span>&lt;button onClick={() =&gt; removeColumn(col)} className="text-red-500 hover:underline text-xs"&gt;刪除&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/th&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>))}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/thead&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;tbody&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{rows.map((row, idx) =&gt; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;tr key={row.id} className="bg-white border-b hover:bg-gray-50"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;td className="p-2 border font-medium text-gray-800 relative group"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;div className="flex items-center justify-between"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="flex flex-col"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                          </span>&lt;button onClick={() =&gt; moveRow(idx, -1)} disabled={idx===0} className="text-gray-400 hover:text-blue-600 disabled:opacity-0 h-4"&gt;&lt;ChevronUp className="w-4 h-4"/&gt;&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                          </span>&lt;button onClick={() =&gt; moveRow(idx, 1)} disabled={idx===rows.length-1} className="text-gray-400 hover:text-blue-600 disabled:opacity-0 h-4"&gt;&lt;ChevronDown className="w-4 h-4"/&gt;&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span className="ml-2 flex-1"&gt;{row.name}&lt;/span&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity ml-1"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                          </span>&lt;button onClick={() =&gt; renameRow(row.id, row.name)} className="text-blue-600"&gt;&lt;Edit2 className="w-3 h-3"/&gt;&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                          </span>&lt;button onClick={() =&gt; removeRow(row.id)} className="text-red-500"&gt;&lt;Trash2 className="w-3 h-3"/&gt;&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/td&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>{columns.map(col =&gt; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;td key={col} className="p-2 border"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;input<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                          </span>type="number"<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                          </span>className="w-full p-2 border rounded outline-none focus:ring-2 focus:ring-blue-400 text-center font-mono"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                          </span>value={row.values[col] ?? 0}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                          </span>onChange={(e) =&gt; updateCellValue(row.id, col, e.target.value)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                          </span>onFocus={(e) =&gt; e.target.select()}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>/&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span>&lt;/td&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>))}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;/tr&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>))}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/tbody&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/table&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="mt-4 flex items-center gap-3 bg-white p-3 rounded-lg border border-gray-200 shadow-sm"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;label className="font-bold text-gray-700 whitespace-nowrap"&gt;數據單位：&lt;/label&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;input<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>type="text"<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>className="flex-1 p-2 border-b border-gray-300 focus:border-blue-500 outline-none bg-transparent"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>value={experiment.unit || ''}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>onChange={(e) =&gt; updateExperiment({ ...experiment, unit: e.target.value })}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>placeholder="請輸入單位 (例如：公分、秒、次數...)"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>/&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>function DataChart({ experiment }) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const { columns, rows } = experiment;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [chartType, setChartType] = useState('bar');<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const [pieTargetCol, setPieTargetCol] = useState(columns[0]);</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>useEffect(() =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (!columns.includes(pieTargetCol) &amp;&amp; columns.length &gt; 0) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>setPieTargetCol(columns[0]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>}, [columns, pieTargetCol]);</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const getCartesianData = () =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>return columns.map(col =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>const point = { name: col };</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>rows.forEach(row =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>point[row.name] = Number(row.values[col]) || 0;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>});</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>return point;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const getPieData = () =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>return rows.map(r =&gt; ({</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>name: r.name,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>value: Number(r.values[pieTargetCol]) || 0</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}));</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const chartData = getCartesianData();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const pieData = getPieData();</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>const renderChart = () =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (chartType === 'pie') {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>return (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;ResponsiveContainer width="100%" height={300}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;PieChart&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;Pie<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>data={pieData}<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>dataKey="value"<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>nameKey="name"<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>cx="50%"<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>cy="50%"<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>outerRadius={100}<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>label={({name, value}) =&gt; `${name}: ${value}`}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>labelLine={true}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>isAnimationActive={false}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>{pieData.map((entry, index) =&gt; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>))}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/Pie&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;Tooltip formatter={(value) =&gt; [value, '數值']} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;Legend /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/PieChart&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/ResponsiveContainer&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>if (chartType === 'line') {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>return (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;ResponsiveContainer width="100%" height={300}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;LineChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;XAxis dataKey="name" axisLine={false} tickLine={false} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;YAxis axisLine={false} tickLine={false} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;Legend wrapperStyle={{ paddingTop: '20px' }} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{rows.map((row, index) =&gt; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;Line key={row.id} type="monotone" dataKey={row.name} stroke={COLORS[index % COLORS.length]} strokeWidth={3} activeDot={{ r: 8 }} isAnimationActive={false}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;LabelList dataKey={row.name} position="top" offset={10} style={{ fill: '#4b5563', fontSize: '12px', fontWeight: 'bold' }} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;/Line&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>))}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/LineChart&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/ResponsiveContainer&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>return (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;ResponsiveContainer width="100%" height={300}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;BarChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;XAxis dataKey="name" axisLine={false} tickLine={false} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;YAxis axisLine={false} tickLine={false} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;Tooltip cursor={{fill: 'transparent'}} contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;Legend wrapperStyle={{ paddingTop: '20px' }} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>{rows.map((row, index) =&gt; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;Bar key={row.id} dataKey={row.name} fill={COLORS[index % COLORS.length]} radius={[4, 4, 0, 0]} maxBarSize={60} isAnimationActive={false}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;LabelList dataKey={row.name} position="top" style={{ fill: '#4b5563', fontSize: '12px', fontWeight: 'bold' }} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/Bar&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>))}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/BarChart&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/ResponsiveContainer&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>return (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div className="flex-1 flex flex-col h-full"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex flex-wrap justify-between items-center mb-6 gap-4 border-b border-gray-200 pb-3"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h3 className="font-bold text-gray-700 flex items-center gap-2"&gt;&lt;BarChart2 className="w-5 h-5"/&gt; 即時圖表&lt;/h3&gt;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="flex items-center gap-2 bg-white p-1 rounded-lg border shadow-sm"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;button<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>className={`px-3 py-1.5 rounded-md text-sm font-medium transition flex items-center gap-1 ${chartType === 'bar' ? 'bg-blue-100 text-blue-700' : 'text-gray-500 hover:bg-gray-100'}`}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>onClick={() =&gt; setChartType('bar')}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;BarChart2 className="w-4 h-4"/&gt; 直條圖</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;button<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>className={`px-3 py-1.5 rounded-md text-sm font-medium transition flex items-center gap-1 ${chartType === 'line' ? 'bg-blue-100 text-blue-700' : 'text-gray-500 hover:bg-gray-100'}`}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>onClick={() =&gt; setChartType('line')}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;Activity className="w-4 h-4"/&gt; 折線圖</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;button<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>className={`px-3 py-1.5 rounded-md text-sm font-medium transition flex items-center gap-1 ${chartType === 'pie' ? 'bg-blue-100 text-blue-700' : 'text-gray-500 hover:bg-gray-100'}`}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>onClick={() =&gt; setChartType('pie')}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;PieChartIcon className="w-4 h-4"/&gt; 圓餅圖</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>{chartType === 'pie' &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div className="mb-4 flex items-center gap-2 text-sm justify-center"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span className="text-gray-600"&gt;選擇顯示資料欄位：&lt;/span&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;select<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>className="p-1 border rounded bg-white outline-none focus:border-blue-500"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>value={pieTargetCol}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>onChange={(e) =&gt; setPieTargetCol(e.target.value)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{columns.map(c =&gt; &lt;option key={c} value={c}&gt;{c}&lt;/option&gt;)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/select&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>)}</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div className="flex-1 min-h-[300px] flex items-center justify-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>{renderChart()}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>// 將 React App 渲染到畫面上</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>const root = createRoot(document.getElementById('root'));</span></p>
 <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>root.render(&lt;App /&gt;);</span></p>
 <p class="p3"><span class="s5"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
 <p class="p3"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
